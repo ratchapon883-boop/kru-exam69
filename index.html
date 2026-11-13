@@ -2496,6 +2496,169 @@ input:focus,select:focus,textarea:focus{
   color:transparent
 }
 
+/* ── โหมดมืด: กรอบที่พื้นหลังยังเป็นสีขาว/สีอ่อน ให้ตัวอักษรข้างในเป็นสีดำ ──
+   กรอบพื้นหลังมืดอยู่แล้ว (header / hero / sidebar / พื้นหลังหน้า) ไม่แตะต้อง คงตัวอักษรอ่อนเหมือนเดิม
+   ปุ่ม/ป้ายที่พื้นหลังเข้มเอง (grad-cta / bg-black / bg-[#0B1D51] / สีเข้มอื่น / text-white) คงตัวอักษรขาวไว้
+   เพื่อให้ตัดกับสีปุ่ม ไม่ถูกบังคับเป็นดำไปด้วย */
+
+[data-theme="dark"] [class~="bg-white"],
+[data-theme="dark"] [class~="!bg-white"],
+[data-theme="dark"] [class~="bg-[#f6f6f6]"],
+[data-theme="dark"] [class~="bg-[#f8fafc]"],
+[data-theme="dark"] [class~="bg-[#f1f1f1]"],
+[data-theme="dark"] [class~="bg-[#eee]"],
+[data-theme="dark"] [class~="bg-[#F8FAFC]"],
+[data-theme="dark"] [class~="bg-[#f1f5f9]"]{
+  background:#ffffff!important;
+  color:#111827!important
+}
+
+[data-theme="dark"] [class~="bg-blue-50"],
+[data-theme="dark"] [class~="!bg-blue-50"],
+[data-theme="dark"] [class~="bg-[#EFF6FF]"]{
+  background:#EFF6FF!important;
+  color:#111827!important
+}
+
+[data-theme="dark"] [class~="bg-emerald-50"],
+[data-theme="dark"] [class~="bg-emerald-100"],
+[data-theme="dark"] [class~="bg-[#ECFEFF]"]{
+  background:#ECFDF5!important;
+  color:#111827!important
+}
+
+[data-theme="dark"] [class~="bg-amber-50"],
+[data-theme="dark"] [class~="bg-amber-100"],
+[data-theme="dark"] [class~="bg-[#FFFBEB]"],
+[data-theme="dark"] [class~="bg-[#FFFBEA]"],
+[data-theme="dark"] [class~="bg-[#FEF3C7]"],
+[data-theme="dark"] [class~="!bg-red-50"]{
+  background:#FFFBEB!important;
+  color:#111827!important
+}
+
+[data-theme="dark"] [class~="bg-orange-50"]{
+  background:#FFF7ED!important;
+  color:#111827!important
+}
+
+[data-theme="dark"] [class~="bg-violet-50"],
+[data-theme="dark"] [class~="bg-violet-100"],
+[data-theme="dark"] [class~="!bg-violet-100"]{
+  background:#F5F3FF!important;
+  color:#111827!important
+}
+
+[data-theme="dark"] [class~="bg-red-50"],
+[data-theme="dark"] [class~="bg-red-100"]{
+  background:#FEF2F2!important;
+  color:#111827!important
+}
+
+[data-theme="dark"] [class~="bg-slate-50"]{
+  background:#F8FAFC!important;
+  color:#111827!important
+}
+
+[data-theme="dark"] [class~="bg-white"] .text-navy,
+[data-theme="dark"] [class~="bg-white"] .num-navy,
+[data-theme="dark"] [class~="!bg-white"] .text-navy,
+[data-theme="dark"] [class~="!bg-white"] .num-navy{
+  color:#111827!important
+}
+
+/* ตัวอักษรทั้งหมดในกรอบพื้นขาว/พื้นอ่อน = ดำ (หัวข้อ ข้อความ ตัวเลือก คะแนน ป้าย) */
+
+[data-theme="dark"] [class~="bg-white"] *,
+[data-theme="dark"] [class~="!bg-white"] *,
+[data-theme="dark"] [class~="bg-[#f6f6f6]"] *,
+[data-theme="dark"] [class~="bg-[#f8fafc]"] *,
+[data-theme="dark"] [class~="bg-[#f1f1f1]"] *,
+[data-theme="dark"] [class~="bg-[#eee]"] *,
+[data-theme="dark"] [class~="bg-[#F8FAFC]"] *,
+[data-theme="dark"] [class~="bg-[#f1f5f9]"] *,
+[data-theme="dark"] [class~="bg-blue-50"] *,
+[data-theme="dark"] [class~="!bg-blue-50"] *,
+[data-theme="dark"] [class~="bg-[#EFF6FF]"] *,
+[data-theme="dark"] [class~="bg-emerald-50"] *,
+[data-theme="dark"] [class~="bg-emerald-100"] *,
+[data-theme="dark"] [class~="bg-[#ECFEFF]"] *,
+[data-theme="dark"] [class~="bg-amber-50"] *,
+[data-theme="dark"] [class~="bg-amber-100"] *,
+[data-theme="dark"] [class~="bg-[#FFFBEB]"] *,
+[data-theme="dark"] [class~="bg-[#FFFBEA]"] *,
+[data-theme="dark"] [class~="bg-[#FEF3C7]"] *,
+[data-theme="dark"] [class~="!bg-red-50"] *,
+[data-theme="dark"] [class~="bg-orange-50"] *,
+[data-theme="dark"] [class~="bg-violet-50"] *,
+[data-theme="dark"] [class~="bg-violet-100"] *,
+[data-theme="dark"] [class~="!bg-violet-100"] *,
+[data-theme="dark"] [class~="bg-red-50"] *,
+[data-theme="dark"] [class~="bg-red-100"] *,
+[data-theme="dark"] [class~="bg-slate-50"] *,
+[data-theme="dark"] [style*="255, 255, 255"] *,
+[data-theme="dark"] [style*="255,255,255"] *{
+  color:#111827!important
+}
+
+/* ช่องกรอกในกรอบขาว: พื้นขาว ตัวอักษรดำ (ไม่ให้กลายเป็นช่องมืดตัวอักษรขาวบนกรอบขาว) */
+
+[data-theme="dark"] [class~="bg-white"] input,
+[data-theme="dark"] [class~="bg-white"] select,
+[data-theme="dark"] [class~="bg-white"] textarea,
+[data-theme="dark"] [class~="!bg-white"] input,
+[data-theme="dark"] [class~="!bg-white"] select,
+[data-theme="dark"] [class~="!bg-white"] textarea,
+[data-theme="dark"] [class~="bg-[#f6f6f6]"] input,
+[data-theme="dark"] [class~="bg-[#f8fafc]"] input,
+[data-theme="dark"] [class~="bg-[#f8fafc]"] select,
+[data-theme="dark"] [class~="bg-[#f8fafc]"] textarea{
+  background:#ffffff!important;
+  color:#111827!important;
+  border-color:#D8DEEE!important
+}
+
+/* ข้อยกเว้น: ปุ่ม/ป้ายที่พื้นหลังเข้มเองในกรอบขาว — คงตัวอักษรขาวไว้ให้ตัดกับสีปุ่ม */
+
+[data-theme="dark"] [class~="bg-white"] .grad-cta,
+[data-theme="dark"] [class~="bg-white"] .grad-cta *,
+[data-theme="dark"] [class~="bg-white"] [class~="bg-black"],
+[data-theme="dark"] [class~="bg-white"] [class~="bg-black"] *,
+[data-theme="dark"] [class~="bg-white"] [class~="!bg-black"],
+[data-theme="dark"] [class~="bg-white"] [class~="!bg-black"] *,
+[data-theme="dark"] [class~="bg-white"] [class~="bg-[#0B1D51]"],
+[data-theme="dark"] [class~="bg-white"] [class~="bg-[#0B1D51]"] *,
+[data-theme="dark"] [class~="bg-white"] [class~="bg-emerald-700"],
+[data-theme="dark"] [class~="bg-white"] [class~="bg-emerald-700"] *,
+[data-theme="dark"] [class~="bg-white"] [class~="bg-violet-700"],
+[data-theme="dark"] [class~="bg-white"] [class~="bg-violet-700"] *,
+[data-theme="dark"] [class~="bg-white"] [class~="bg-violet-600"],
+[data-theme="dark"] [class~="bg-white"] [class~="bg-violet-600"] *,
+[data-theme="dark"] [class~="bg-white"] [class~="bg-red-600"],
+[data-theme="dark"] [class~="bg-white"] [class~="bg-red-600"] *,
+[data-theme="dark"] [class~="bg-white"] [class~="bg-amber-600"],
+[data-theme="dark"] [class~="bg-white"] [class~="bg-amber-600"] *,
+[data-theme="dark"] [class~="bg-white"] [class~="text-white"],
+[data-theme="dark"] [class~="bg-white"] [class~="text-white"] *,
+[data-theme="dark"] [class~="bg-white"] [class~="!text-white"],
+[data-theme="dark"] [class~="bg-white"] [class~="!text-white"] *{
+  color:#ffffff!important
+}
+
+/* ป้าย chip พื้นเข้ม (ไม่มีพื้นอ่อนของตัวเอง) ในกรอบขาว — คงตัวอักษรอ่อนไว้ */
+
+[data-theme="dark"] [class~="bg-white"] [class~="chip"]:not([class~="!bg-white"]):not([class~="!bg-red-50"]):not([class~="!bg-blue-50"]):not([class~="!bg-violet-100"]),
+[data-theme="dark"] [class~="bg-white"] [class~="chip"]:not([class~="!bg-white"]):not([class~="!bg-red-50"]):not([class~="!bg-blue-50"]):not([class~="!bg-violet-100"]) *{
+  color:#DCE6FF!important
+}
+
+/* ข้อยกเว้นเดียวกัน สำหรับปุ่มพื้นเข้มที่อยู่ในกรอบสีอ่อนแบบอื่น (เช่น กรอบเหลืองอ่อน/ฟ้าอ่อนที่ไม่ได้ซ้อนในกรอบขาว) */
+
+[data-theme="dark"] :is([class~="bg-white"],[class~="!bg-white"],[class~="bg-blue-50"],[class~="bg-emerald-50"],[class~="bg-amber-50"],[class~="bg-orange-50"],[class~="bg-violet-50"],[class~="bg-red-50"],[class~="bg-[#f6f6f6]"],[class~="bg-[#f8fafc]"],[class~="bg-[#FFFBEB]"],[class~="bg-[#FFFBEA]"]) :is(.grad-cta,[class~="bg-black"],[class~="!bg-black"],[class~="bg-[#0B1D51]"],[class~="bg-emerald-700"],[class~="bg-violet-700"],[class~="bg-red-600"],[class~="bg-amber-600"],[class~="text-white"],[class~="!text-white"]),
+[data-theme="dark"] :is([class~="bg-white"],[class~="!bg-white"],[class~="bg-blue-50"],[class~="bg-emerald-50"],[class~="bg-amber-50"],[class~="bg-orange-50"],[class~="bg-violet-50"],[class~="bg-red-50"],[class~="bg-[#f6f6f6]"],[class~="bg-[#f8fafc]"],[class~="bg-[#FFFBEB]"],[class~="bg-[#FFFBEA]"]) :is(.grad-cta,[class~="bg-black"],[class~="!bg-black"],[class~="bg-[#0B1D51]"],[class~="bg-emerald-700"],[class~="bg-violet-700"],[class~="bg-red-600"],[class~="bg-amber-600"],[class~="text-white"],[class~="!text-white"]) *{
+  color:#ffffff!important
+}
+
 .hover\:border-violet-300:hover{
   --tw-border-opacity: 1;
   border-color: rgb(196 181 253 / var(--tw-border-opacity, 1));
